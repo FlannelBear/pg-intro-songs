@@ -5,7 +5,15 @@ const pool = require('../pool/pool');
 
 router.get('/', (req, res)=>{
    console.log('Handling GET for /song');
-   res.send('Woof!');
+   // Query to be sent through the pool to our db
+   const queryText = 'SELECT * FROM songs';
+   // 
+   pool.query(queryText).then((result)=> {
+      res.send(result.rows);
+   }).catch((error)=> {
+      console.log('Error for GET from /song: ', error);
+      res.sendStatus(500)
+   });
 });
 
 router.post('/', (req, res)=> {

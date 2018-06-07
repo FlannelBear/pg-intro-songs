@@ -20,11 +20,11 @@ const config = {
 const pool = new POOL(config);// Instantiate a new instance of the Pool class using the config data defined above
 // Connect pool to db
 pool.on('connect', (client)=>{
-   console.log(`Connected to database: ${DATABASE_NAME} from ${client}`);
+   console.log(`Connected to database: ${DATABASE_NAME} from`, client);
 });
 // Handle errors when connecting to the db (Also id waiting too long)
 pool.on('error', (err, client)=>{
-   console.log(`Error connecting to database: ${DATABASE_NAME} from ${client}. Err: ${err}`);
+   console.log(`Error connecting to database: ${DATABASE_NAME} from`, client `. Err: ${err}`);
    process.exit(-1); // THIS ENDS THE PROCESS FOR THE CONNECTION SO THAT IT CAN BE USED BY SOMEONE ELSE
                      // The -1 indicates what? 
 });
