@@ -5,7 +5,7 @@ const bodyParser = require( 'body-parser' );
 app.use( bodyParser.urlencoded( {extended: true} ) );
 app.use( bodyParser.json() ); // Maybe?
 
-const songRouter = require('./routes/song-router');
+const songRouter = require('./routes/song-router.js');
 app.use('/song', songRouter);
 
 const PORT = 5000 || process.env.PORT;
