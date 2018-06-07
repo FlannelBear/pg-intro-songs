@@ -26,9 +26,17 @@ router.put('/', (req, res)=> {
    res.sendStatus(200);
 });
 
-router.delete('/', (req, res)=> {
+router.delete('/:id', (req, res)=> {
    console.log('Handling DELETE for /song');
-   res.sendStatus(200);
+   const id = req.params.id;
+   const queryText = 'DELETE FROM songs WHERE id = $1';
+   pool.query(queryText, [1]).then((result)=> {
+      console.log('Deleted from /song', id);
+      res.sendStatus(200);
+   }).catch((error)=> {
+      console.log('Error handling DELETE for /song', error);
+      res.sendStatus(500);
+   });
 });
 
 
