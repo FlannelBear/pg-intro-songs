@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const pool = require('../pool/pool');
+
 router.get('/', (req, res)=>{
    console.log('Handling GET for /song');
    res.send('Woof!');
