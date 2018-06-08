@@ -11,4 +11,9 @@ songsApp.controller('songManifestController', function(songsService){
    vm.vote = function(direction){
       console.log('In vote!', direction);
    }
+   vm.deleteSong = function(row){
+      songsService.deleteSong(row.song.id).then(function(){
+         vm.getAllSongs();
+      });
+   }
 });

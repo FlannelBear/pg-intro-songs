@@ -6,14 +6,17 @@
             <th>Song Title</th>
             <th>Artist</th>
             <th>Publication Date</th>
+            <th>Vote</th>
+            <th>Delete</th>
          </thead>
          <tbody ng-repeat="song in SM.songs">
             <tr>
-               <td><button ng-click="SM.vote(true)">Up vote</button><button ng-click="SM.vote(false)">Down vote</button></td>
                <td>{{song.rank}}</td>
                <td>{{song.track}}</td>
                <td>{{song.artist}}</td>
                <td>{{song.published}}</td>
+               <td><button class="btn" ng-click="SM.vote(true)">Up vote</button><button class="btn" ng-click="SM.vote(false)">Down vote</button></td>
+               <td><button class="btn-danger" ng-click="SM.deleteSong(this)">Delete</button></td>
             </tr>
          </tbody>
       </table>

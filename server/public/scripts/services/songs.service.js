@@ -24,5 +24,15 @@ songsApp.service('songsService', ['$http', function($http){
       }).catch(function(error){
          console.log('Error handling POST for /song:, ', error);
       });
+   };
+   sv.deleteSong = function(id){
+      return $http({
+         method: 'DELETE',
+         url: `/song/${id}`
+      }).then(function(response){
+         console.log('Response from server for DELETE /song: ', response);
+      }).catch(function(error){
+         console.log('Error handling DELETE for /song: ', error);
+      });
    }
 }]);

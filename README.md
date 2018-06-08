@@ -16,10 +16,10 @@ Continuing to work with the songs API that we built earlier to interact with the
 For the front end functionality you should be able to:
 
 [x]See all the songs
-Add a new song. Do input validation to make sure you have always have an artist and track title. New songs should get rank 1.
-Delete a song
+[x]Add a new song. Do input validation to make sure you have always have an artist and track title. New songs should get rank 1.
+[x]Delete a song
 Up vote a song to increase its rank
-Stretch goals:
+Stretch goals:e
 
 Make the entire song editable
 Update your database structure to require the track name and artist. Set the rank to 1 by default. (Make sure the database create script is updated to do this as well.)
