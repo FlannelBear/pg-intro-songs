@@ -34,5 +34,21 @@ songsApp.service('songsService', ['$http', function($http){
       }).catch(function(error){
          console.log('Error handling DELETE for /song: ', error);
       });
+   };
+   sv.updateSong = function(song, vote){
+      if(vote){ // Up vote
+         song.rank++;
+      } else { // Down vote
+         song.rank--;
+      }
+      return $http({
+         method: 'PUT',
+         url: `/song/${song.id}`,
+         data: song
+      }).then(function(response){
+         console.log('Response from PUT for /song: ', response);
+      }).catch(function(error){
+         console.log('Error handling PUT for /song: ', error);
+      });
    }
 }]);
