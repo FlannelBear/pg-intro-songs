@@ -6,7 +6,7 @@ const pool = require('../pool/pool');
 router.get('/', (req, res)=>{
    console.log('Handling GET for /song');
    // Query to be sent through the pool to our db
-   const queryText = 'SELECT * FROM songs';
+   const queryText = 'SELECT * FROM songs ORDER BY rank DESC';
    // 
    pool.query(queryText).then((result)=> {
       res.send(result.rows);
