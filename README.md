@@ -18,7 +18,7 @@ For the front end functionality you should be able to:
 [x]See all the songs
 [x]Add a new song. Do input validation to make sure you have always have an artist and track title. New songs should get rank 1.
 [x]Delete a song
-Up vote a song to increase its rank
+[x]Up vote a song to increase its rank
 Stretch goals:e
 
 Make the entire song editable
