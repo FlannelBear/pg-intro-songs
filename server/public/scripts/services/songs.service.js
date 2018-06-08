@@ -1,6 +1,3 @@
-console.log('Before app declared in service');
-
-console.log('After app declared in service');
 songsApp.service('songsService', ['$http', function($http){
    let sv = this;
    sv.songs = [];
@@ -17,4 +14,15 @@ songsApp.service('songsService', ['$http', function($http){
          console.log('Error from GET for /song: ', error);
       });
    };
+   sv.addSong = function(song){
+      return $http({
+         method: 'POST',
+         url: '/song',
+         data: song
+      }).then(function(response){
+         console.log('POST for /song returned: ', response);
+      }).catch(function(error){
+         console.log('Error handling POST for /song:, ', error);
+      });
+   }
 }]);

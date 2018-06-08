@@ -1,7 +1,3 @@
-console.log('js');
-
-const songsApp = angular.module('songsApp', []);
-
 songsApp.controller('songManifestController', function(songsService){
    const vm = this;
    console.log('In songManifestController');
@@ -12,4 +8,7 @@ songsApp.controller('songManifestController', function(songsService){
          vm.songs = songsService.songs;
       });
    };
+   vm.vote = function(direction){
+      console.log('In vote!', direction);
+   }
 });

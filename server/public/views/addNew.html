@@ -1,0 +1,10 @@
+<section ng-controller="addNewSongController as AN">
+   <form ng-submit="AN.addSong()">
+      <input placeholder="Artist" type="text" ng-model="AN.artistIn">
+      <input placeholder="Song Title" type="text" ng-model="AN.trackIn">
+      <input placeholder="Publication Date" type="text" ng-model="AN.publicationDateIn">
+      <input type="submit" value="Add Song" class="btn-primary">
+   </form>
+
+
+</section>

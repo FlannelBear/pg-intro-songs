@@ -1,0 +1,20 @@
+<section ng-controller="songManifestController as SM">
+      <button class="btn-primary" ng-click="SM.getAllSongs()">Show Manifest</button>
+      <table class="table">
+         <thead>
+            <th>Rank</th>
+            <th>Song Title</th>
+            <th>Artist</th>
+            <th>Publication Date</th>
+         </thead>
+         <tbody ng-repeat="song in SM.songs">
+            <tr>
+               <td><button ng-click="SM.vote(true)">Up vote</button><button ng-click="SM.vote(false)">Down vote</button></td>
+               <td>{{song.rank}}</td>
+               <td>{{song.track}}</td>
+               <td>{{song.artist}}</td>
+               <td>{{song.published}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </section>
